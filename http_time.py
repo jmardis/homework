@@ -14,9 +14,8 @@ class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
         self.send_header('Content-type', 'text/html')
         self.end_headers()
 
-        # Send message back to client
+        # Set the response message to date and time
         message = time.asctime(time.localtime(time.time()))
-        print(message)
         # Write content as utf-8 data
         self.wfile.write(bytes(message, "utf8"))
         return
